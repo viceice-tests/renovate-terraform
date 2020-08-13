@@ -56,10 +56,15 @@ jobs:
     name: 'Terraform'
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        cfg: [old, new]
+
     # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
     defaults:
       run:
         shell: bash
+        working-directory: ${{ matrix.cfg }}
 
     # Checkout the repository to the GitHub Actions runner
     steps:
