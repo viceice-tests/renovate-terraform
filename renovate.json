@@ -3,5 +3,11 @@
   "extends": ["config:base"],
   "automergeType": "branch",
   "semanticCommits": true,
-  "rangeStrategy":"bump"
+  "rangeStrategy":"bump",
+  "packageRules": [
+    {
+      "packageNames": ["actions/checkout"],
+      "versioning": "npm"
+    }
+  ]
 }
